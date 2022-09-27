@@ -22,7 +22,9 @@ class ColumbiaStudentResource:
             cursorclass=pymysql.cursors.DictCursor,
             autocommit=True
         )
+        # print(conn)
         return conn
+
 
     @staticmethod
     def get_by_key(key):
