@@ -1,3 +1,5 @@
+import os
+
 import pymysql
 
 
@@ -9,10 +11,14 @@ class ColumbiaStudentResource:
     @staticmethod
     def _get_connection():
 
+        usr = os.environ.get("dbuser")
+        pw = os.environ.get("dbpw")
+        hst = os.environ.get("dbhost")
+
         conn = pymysql.connect(
-            user="root",
-            password="Xcz990208!",
-            host="localhost",
+            user=usr,
+            password=pw,
+            host=hst,
             cursorclass=pymysql.cursors.DictCursor,
             autocommit=True
         )
